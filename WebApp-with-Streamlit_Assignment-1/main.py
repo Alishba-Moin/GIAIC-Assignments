@@ -5,7 +5,6 @@ import json
 import random
 from io import BytesIO
 
-
 # Load or initialize data
 def load_data():
     if os.path.exists("data.json"):
@@ -161,7 +160,7 @@ elif page == "File Converter":
                     file_name = file.name.replace(file_extension, ".csv")
                     mime_type = "text/csv"
                 else:
-                    df.to_excel(buffer, index=False, engine='openpyxl')
+                    df.to_excel(buffer, index=False, engine='openpyxl')  # Save as Excel using openpyxl
                     file_name = file.name.replace(file_extension, ".xlsx")
                     mime_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                 buffer.seek(0)

@@ -137,6 +137,8 @@ elif page == "Journal & Reflection":
 elif page == "File Converter":
     st.header("📂 CSV & Excel File Converter")
     upload_Files = st.file_uploader("Upload your files (CSV or Excel):", type=["csv", "xlsx"], accept_multiple_files=True)
+
+    # Upload files
     if upload_Files:
         for file in upload_Files:
             file_extension = os.path.splitext(file.name)[-1].lower()
@@ -150,9 +152,13 @@ elif page == "File Converter":
             st.write(f"**File Name**: {file.name}")
             st.write(f"**File Size**: {file.size/1024} KB")
             st.dataframe(df.head())
+
+            # Data visualization
             if st.checkbox(f"Show Visualization for {file.name}"):
                 st.bar_chart(df.select_dtypes(include='number').iloc[:, :2])
             conversion_type = st.radio(f"Convert {file.name} to:", ["CSV", "Excel"], key=file.name)
+
+            # Convert File CSV, Excel 
             if st.button(f"Convert {file.name}"):
                 buffer = BytesIO()
                 if conversion_type == "CSV":
@@ -164,6 +170,8 @@ elif page == "File Converter":
                     file_name = file.name.replace(file_extension, ".xlsx")
                     mime_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
                 buffer.seek(0)
+
+                # Download file
                 st.download_button(
                     label=f"Download {file.name} as {conversion_type}",
                     data=buffer,

@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "year": "2018",
+        "genre": "Self help",
+        "read": false
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F . scott Fitzgerland",
+        "year": "1925",
+        "genre": "Fiction",
+        "read": true
+    },
+    {
+        "title": "Harry Potter and the Sorcerer\u00e2\u20ac\u2122s Stone",
+        "author": "J.K. Rowling",
+        "year": "1997",
+        "genre": "Fantasy",
+        "read": true
+    },
+    {
+        "title": "Clean Code",
+        "author": "Robert C.Martin",
+        "year": 2008,
+        "genre": "Programming",
+        "read": false
+    }
+]

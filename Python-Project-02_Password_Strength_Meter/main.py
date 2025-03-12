@@ -125,7 +125,6 @@ st.markdown(
 )
 
 st.markdown('<div class="navbar">🔐 Secure Password Analyzer</div>', unsafe_allow_html=True)
-
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Password Strength Checker", "Password Generator"])
 
